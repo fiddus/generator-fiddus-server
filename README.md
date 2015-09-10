@@ -41,6 +41,14 @@ Yeoman has a heart of gold. He's a person with feelings and opinions, but he's v
 
 If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
 
+## Fiddus-Server generator
+
+This generator creates a working REST API server, on top of a Node.js/Express.js/MongoDB stack.
+
+It comes with authentication, user management (CRUD + activation + password recovery) and some basic action logging.
+
+The structure of the application is somewhat based on [Peter Lyons](https://github.com/focusaurus) [express code structure](https://github.com/focusaurus/express_code_structure) for mid-sized Express projects,
+where files related to some specific part of application stay close together, instead of separated by function, such as in traditional MVC architectures (I'm looking at you, RoR).
 
 ## License
 
