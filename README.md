@@ -50,6 +50,13 @@ It comes with authentication, user management (CRUD + activation + password reco
 The structure of the application is somewhat based on [Peter Lyons](https://github.com/focusaurus) [express code structure](https://github.com/focusaurus/express_code_structure) for mid-sized Express projects,
 where files related to some specific part of application stay close together, instead of separated by function, such as in traditional MVC architectures (I'm looking at you, RoR).
 
+## Contributing
+
+If you wish to modify the server structure itself, instead of generator stuff, please @see [https://github.com/fiddus/server-template](https://github.com/fiddus/server-template).
+This generator is completely based in this server template and any changes made to the template will be ported to the generator.
+
+If you want to add functionality to the generator itself, such as further configuring the output, fell free to send PR's to this repo.
+
 ## License
 
 The MIT License (MIT)
