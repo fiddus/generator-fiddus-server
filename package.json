@@ -1,6 +1,6 @@
 {
   "name": "generator-fiddus-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Yeoman generator for a Node.js/Express.js/MongoDB based, REST API server. It comes with authentication and logging out of the box.",
   "license": "MIT",
   "main": "app/index.js",
