@@ -1,13 +1,13 @@
 {
   "name": "generator-fiddus-server",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Yeoman generator",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "vinicius0026/generator-fiddus-server",
+  "repository": "fiddus/generator-fiddus-server",
   "author": {
     "name": "Vinicius Teixeira",
-    "email": "",
+    "email": "vinicius0026@gmail.com",
     "url": "https://github.com/vinicius0026"
   },
   "scripts": {
@@ -17,7 +17,13 @@
     "generators"
   ],
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator",
+    "node",
+    "nodejs",
+    "express",
+    "expressjs",
+    "mongodb",
+    "mongoose"
   ],
   "dependencies": {
     "yeoman-generator": "^0.20.3",
