@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Recuperação de Password</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,700' rel='stylesheet' type='text/css'>
+        <style>
+            body {
+                font-family: 'Roboto', sans-serif;
+                background: rgb(108, 128, 129);
+                color: white;
+            }
+
+            .content {
+                width: 40%;
+                margin: 0 auto;
+                text-align: center;
+                border: 1px solid;
+                border-radius: 9px;
+                padding: 20px;
+                background: #39D7DD;
+                -webkit-box-shadow: 0px 4px 17px 2px rgba(156, 156, 156, 1);
+                -moz-box-shadow: 0px 4px 17px 2px rgba(156, 156, 156, 1);
+                box-shadow: 0px 4px 17px 2px rgba(156, 156, 156, 1);
+            }
+
+            .content h4 {
+                font-weight: 100;
+            }
+
+            .content p {
+                font-weight: 100;
+                font-size: small;
+            }
+
+            .success-msg {
+                color: white;
+                background: rgba(88, 216, 99, 0.21);
+                width: 40%;
+                margin: 0 auto;
+                text-align: center;
+                font-size: larger;
+                padding: 20px
+            }
+
+            .error-msg {
+                color: white;
+                background: rgb(173, 94, 94);
+                width: 80%;
+                margin: 0 auto;
+            }
+
+            input {
+                width: 50%;padding: 10px;
+            }
+
+        </style>
+
+    </head>
+
+    <body>
+        <div class="content">
+            <h1><i class="fa fa-coffee"></i></h1>
+            <h3><%= projectName %></h3>
+            <h4>Recuperação de Senha</h4>
+            <div class="error-msg" id="erroMessage"></div>
+            <p>Entre com a nova senha nos campos abaixo</p>
+            <form>
+                <div>
+                    <input id="password" type="password" name="password" placeholder="Nova senha">
+                </div>
+                <div>
+                    <input id="repassword" type="password" name="repassword" placeholder="Repita a senha">
+                </div>
+                <div style="margin: 10px;">
+                    <button style="width: 60%;padding: 10px;" id="sendPassword" type="submit" name="Submit">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#sendPassword').click(function (e) {
+                e.preventDefault();
+                $('#erroMessage').empty();
+                $('#successMessage').empty();
+                if ($('#password').val() === $('#repassword').val()) {
+                    $.ajax({
+                        url: '/api/users/passwordreset/<%%= userId %>?code=<%%= passwordResetCode %>',
+                        type: 'PUT',
+                        dataType: 'json',
+                        contentType: 'application/json',
+                        success: function () {
+                            $('body').html('<div class="success-msg">Password Resetado!<div><i class="fa fa-check-square-o"></i></div></div>');
+                        },
+                        error: function () {
+                            $('#erroMessage').append('<h4>Algum erro ocorreu, password não resetado</h4>');
+                        },
+                        data: JSON.stringify({
+                            password: $('#password').val()
+                        })
+                    });
+                } else {
+                    $('#erroMessage').append('<h4>Senhas Diferentes</h4>');
+                }
+            });
+        });
+    </script>
+</html>

@@ -1,0 +1,30 @@
+{
+  "name": "generator-fiddus-server",
+  "version": "0.0.0",
+  "description": "Yeoman generator",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": "vinicius0026/generator-fiddus-server",
+  "author": {
+    "name": "Vinicius Teixeira",
+    "email": "",
+    "url": "https://github.com/vinicius0026"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.20.3",
+    "chalk": "^1.0.0",
+    "yosay": "^1.0.2"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  }
+}

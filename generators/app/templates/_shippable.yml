@@ -1,0 +1,27 @@
+# Language setting
+language: node_js
+
+# Version number
+node_js:
+  - 4.0
+
+# Define any environment variables needed to test the app
+#env:
+#  - NODE_ENV=test AWS_ACCESS_KEY_ID=SDDFJOIEJSD283920 AWS_SECRET_ACCESS_KEY=jJFD03jsdfhlksdf/we9hdn03n
+
+services:
+  - mongodb
+
+# Create directories for test and coverage reports
+before_script:
+  - mkdir -p shippable/testresults
+  - mkdir -p shippable/codecoverage
+
+# Running the tests with grunt
+script:
+  - npm run-script test-shippable
+
+# Tell istanbul to generate a coverage report
+after_script:
+  - npm run-script test-coverage
+  - npm run-script shippable-cobertura
