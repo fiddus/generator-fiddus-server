@@ -9,9 +9,11 @@
 'use strict';
 
 var _ = require('lodash'),
+    
+    environment = (process.env.NODE_ENV == undefined) ? 'dev' : proccess.env.NODE_ENV,
 
     all = {
-        env: process.env.NODE_ENV,
+        env: environment,
         apiVersion: 1,
         port: 9000,
         maxObjectsPerRequest: 100,
@@ -25,4 +27,4 @@ var _ = require('lodash'),
         userRoles: ['user', 'admin']
     };
 
-module.exports = _.merge(all, require('./' + process.env.NODE_ENV + '.js') || {});
+module.exports = _.merge(all, require('./' + environment + '.js') || {});
