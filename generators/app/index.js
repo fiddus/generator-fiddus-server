@@ -80,41 +80,22 @@ module.exports = yeoman.generators.Base.extend({
         this.destinationPath('lib')
       );
 
-      //this.fs.copy(
-      //  this.templatePath('config/activatorConfig.js'),
-      //  this.destinationPath('config/activatorConfig.js')
-      //);
-      //this.fs.copy(
-      //  this.templatePath('config/express.js'),
-      //  this.destinationPath('config/express.js')
-      //);
-      //this.fs.copy(
-      //  this.templatePath('config/responseStuffing.js'),
-      //  this.destinationPath('config/responseStuffing.js')
-      //);
-      //this.fs.copy(
-      //  this.templatePath('config/responseTemplate.js'),
-      //  this.destinationPath('config/responseTemplate.js')
-      //);
-      //this.fs.copy(
-      //  this.templatePath('config/seeds.js'),
-      //  this.destinationPath('config/seeds.js')
-      //);
-
-
       this.fs.copy(
         this.templatePath('logs'),
         this.destinationPath('logs')
       );
+      
       this.fs.copyTpl(
         this.templatePath('resources'),
         this.destinationPath('resources'),
         this.props
       );
+      
       this.fs.copy(
         this.templatePath('app.js'),
         this.destinationPath('app.js')
       );
+      
       this.fs.copy(
         this.templatePath('routes.js'),
         this.destinationPath('routes.js')
